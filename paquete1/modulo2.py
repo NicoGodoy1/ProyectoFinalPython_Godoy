@@ -1,5 +1,3 @@
-from google.colab import drive
-drive.mount("/drive")
 import json
 
 #Función para crear el archivo json cuando se registra el primer usuario
@@ -9,7 +7,7 @@ def crearBaseDatos(NombreUsuario, Contraseña):
   login["usuarios"].append({
       "usuario": NombreUsuario,
       "password":Contraseña})
-  with open("data_usuarios.json", "w", encoding="utf-8") as file:
+  with open(".\data_usuarios.json", "w", encoding="utf-8") as file:
     json.dump(login, file, indent=4)
     print()
     print("¡Su usuario fue registrado con éxito! ✅")
@@ -19,14 +17,14 @@ def registro():
   NombreUsuario = input("▪️ Ingrese el nombre del usuario: ")
   Contraseña = input("▪️ Ingrese la contraseña: ")
   try:
-    with open("data_usuarios.json") as file:
+    with open(".\data_usuarios.json") as file:
       lectura = json.load(file)
     for client in lectura["usuarios"]:
       if client["usuario"] != NombreUsuario:
         lectura["usuarios"].append({
             "usuario": NombreUsuario,
             "password": Contraseña})
-        with open("data_usuarios.json", "w", encoding = "utf-8") as file:
+        with open(".\data_usuarios.json", "w", encoding = "utf-8") as file:
           json.dump(lectura, file, indent=4)
           print()
           print("¡Su usuario fue registrado con éxito! ✅")
@@ -40,7 +38,7 @@ def registro():
 def leerData():
   print("La info almacenada en la base de datos es: ")
   print()
-  with open("data_usuarios.json") as file:
+  with open(".\data_usuarios.json") as file:
     dataLectura = json.load(file)
     for cliente in dataLectura["usuarios"]:
       print("Usuario:", cliente["usuario"])
@@ -51,12 +49,12 @@ def leerData():
 def guardarArchivoTxt():
   print("En la carpeta 'archivosGuardados.txt' podrá \n ver los datos presentados a continuación: ")
   print()
-  with open("data_usuarios.json") as file:
+  with open(".\data_usuarios.json") as file:
     lectura = json.load(file)
     datos = lectura["usuarios"]
     lista = list(datos)
     s = 0
-    f = open("archivosGuardados.txt", "w", encoding = "utf-8")
+    f = open(".archivosGuardados.txt", "w", encoding = "utf-8")
     while s < len(lista):
       print(lista[s])
       f.write(str(lista[s]) + "\n" )
@@ -67,7 +65,7 @@ def guardarArchivoTxt():
 def logIn():
   usuario = str(input("▪️ Ingrese su usuario: "))
   contrasenia = str(input("▪️ Ingrese su contraseña: "))
-  with open("data_usuarios.json") as file:
+  with open(".\data_usuarios.json") as file:
     dataLectura = json.load(file)
     for cliente in dataLectura["usuarios"]:
       if cliente["usuario"] == usuario and cliente["password"] == contrasenia:
@@ -87,7 +85,7 @@ def despedir():
 
 #Esta función enumera todas las líneas del archivo de texto      
 def imprimirTodas():
-  f = open("archivosGuardados.txt", "r", encoding = "utf-8")
+  f = open(".archivosGuardados.txt", "r", encoding = "utf-8")
   num = 1
   for line in f.readlines():
     print(f"línea n°{num}:", line)
@@ -98,7 +96,7 @@ def imprimirTodas():
 #Esta función te permite elegir solo una línea para mostrar en pantalla
 #Más adelante se podrá agregar un ID a cada usuario para identificarlo mejor
 def imprimirLinea():
-  f = open("archivosGuardados.txt", "r", encoding = "utf-8")
+  f = open(".archivosGuardados.txt", "r", encoding = "utf-8")
   linea = int(input("▪️ Ingrese el n° de la línea que desea mostras en pantalla: "))
   num = 1
   for line in f.readlines():
@@ -113,12 +111,15 @@ def imprimirLinea():
   f.close()
   return None
    
-# -------------------------------------------------------------------------
+   
 #PROGRAMA PRINCIPAL
 
 option = int(input("1) Loguear usuario.\n"+
                    "2) Registrar usuario.\n"+
                    "3) Salir.\n"+
+                   "4) Guardar Archivo txt.\n"+
+                   "5) Imprimir todas las líneas (txt).\n"+
+                   "6)Imprimir una línea deseada.\n"+
                    "▪️  Elija el número de la acción que desee realizar: "))
 
 if option == 1:
@@ -127,7 +128,11 @@ elif option == 2:
   registro()
 elif option == 3:
   despedir()
+elif option == 4:
+   guardarArchivoTxt()
+elif option == 5:
+   imprimirTodas()
+elif option == 6:
+   imprimirLinea()
 else:
   print("La opcion es incorrecta.\n")
-
-# comentario 
