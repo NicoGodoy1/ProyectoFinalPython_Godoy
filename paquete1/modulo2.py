@@ -113,7 +113,6 @@ def imprimirLinea():
    
    
 #PROGRAMA PRINCIPAL
-
 option = int(input("1) Loguear usuario.\n"+
                    "2) Registrar usuario.\n"+
                    "3) Salir.\n"+
