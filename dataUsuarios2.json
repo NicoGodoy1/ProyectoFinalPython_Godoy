@@ -10,23 +10,5 @@
         "Nombre": "pepito",
         "Apellido": "pepinetti",
         "Correo": "pepitopepinetto@gmail.com"
-    },
-    {
-        "DNI": "38329297",
-        "Nombre": "Nicolas",
-        "Apellido": "Godoy",
-        "Correo": "nicolasgastongodoy@gmail.com"
-    },
-    {
-        "DNI": "1111111",
-        "Nombre": "pepito",
-        "Apellido": "pepinetti",
-        "Correo": "pepitopepinetto@gmail.com"
-    },
-    {
-        "DNI": "3634",
-        "Nombre": "moremoremore",
-        "Apellido": "moremoremore ferr",
-        "Correo": "hotmail"
     }
 ]

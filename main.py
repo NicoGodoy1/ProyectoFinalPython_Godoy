@@ -9,6 +9,9 @@ Pepito.guardarDatos("1111111","pepito","pepinetti","pepitopepinetto@gmail.com")
 Pepito.comprar("televisor", "5")
 Nico.comprar("televisor", "5")
 print()
+print(Nico)
+print(Pepito)
+print()
 
 
 
