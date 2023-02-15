@@ -10,11 +10,11 @@ print()
 print(Nico)
 print()
 
-
+listaDeUsuarios =[]
 
 # Menu modelamiento de cliente con función comprar/pagar
 crearCliente = int(input("-Desea crear su cliente?:\n 1) Sí\n 2) No\n Ingrese la opción: "))
-numeroUsuario = 1 
+precioTotal = 0
 
 while crearCliente == 1 or 2:
     if crearCliente == 1:
@@ -24,7 +24,7 @@ while crearCliente == 1 or 2:
         nombreCliente = input(" Ingrese su nombre : ")
         apellidoCliente = input(" Ingrese su apellido: ")
         correoCliente = input(" Ingrese su correo: ")
-        usuario = nombreCliente + str(numeroUsuario)
+        usuario = nombreCliente 
         usuario = Cliente( dniCliente, nombreCliente, apellidoCliente, correoCliente)
         usuario.guardarDatos( dniCliente, nombreCliente, apellidoCliente, correoCliente)
         print()
@@ -52,4 +52,3 @@ while crearCliente == 1 or 2:
     else:
         print("debe elegir una opción correcta")
         break
-    
