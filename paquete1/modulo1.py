@@ -20,13 +20,16 @@ class Cliente(Persona):
         self.correo = correo
 
     def __str__(self):
+        print(f"Se ha creado al cliente {self.nombre}. DNI: {self.dni} Nombre: {self.nombre} Apellido: {self.apellido}")
         return f"Se ha creado al cliente {self.nombre}. DNI: {self.dni} Nombre: {self.nombre} Apellido: {self.apellido}"
 
     def comprar(self, producto, cantidad):
         print(f"El cliente {self.nombre} compra {cantidad} {producto}/s\nSe le mandó su factura al coreeo {self.correo}")
+        return f"El cliente {self.nombre} compra {cantidad} {producto}/s\nSe le mandó su factura al coreeo {self.correo}"
 
     def pagar(self, numTarjeta, vencimiento, codigoSeguridad):
         print(f"El cliente utilizó la tarjeta n° {numTarjeta} con vencimiento el {vencimiento}\n y código de seguridad {codigoSeguridad}")
+        return f"El cliente utilizó la tarjeta n° {numTarjeta} con vencimiento el {vencimiento}\n y código de seguridad {codigoSeguridad}"
     
     def guardarDatos(self, dni, nombre, apellido, correo  ):
         login.append({

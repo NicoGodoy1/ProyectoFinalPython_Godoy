@@ -1,6 +1,7 @@
 from paquete1.modulo1 import Cliente
 from paquete1.modulo2 import *
 
+# pruebas
 print()
 Nico = Cliente("38329297","Nicolas","Godoy","nicolasgastongodoy@gmail.com")
 Pepito = Cliente("1111111","pepito","pepinetti","pepitopepinetto@gmail.com")
@@ -15,8 +16,8 @@ print()
 
 
 
-# Menu crear cliente y para comprar/pagar
-crearCliente = int(input("-Desea crear un cliente?:\n 1) Sí\n 2) No\n Ingrese la opción: "))
+# Menu modelamiento de cliente con función comprar/pagar
+crearCliente = int(input("-Desea crear su cliente?:\n 1) Sí\n 2) No\n Ingrese la opción: "))
 numeroUsuario = 1 
 
 while crearCliente == 1 or 2:
@@ -47,7 +48,7 @@ while crearCliente == 1 or 2:
             print()
             break
         else:
-            print("debe elegir una opción correcta")
+            print("Debe elegir una opción correcta")
             break
     elif crearCliente == 2:
         print("Regrese cuando desee para crear su usuario")
