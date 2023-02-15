@@ -4,8 +4,8 @@ from paquete1.modulo2 import *
 # pruebas
 print()
 Nico = Cliente("38329297","Nicolas","Godoy","nicolasgastongodoy@gmail.com")
-Nico.guardarDatos("38329297","Nicolas","Godoy","nicolasgastongodoy@gmail.com")
 Nico.comprar("televisor", "5")
+Nico.pagar("4564 3456 7896 3456", "12/30", "123")
 print()
 print(Nico)
 print()
