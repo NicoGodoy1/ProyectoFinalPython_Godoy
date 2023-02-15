@@ -10,7 +10,6 @@ print()
 print(Nico)
 print()
 
-listaDeUsuarios =[]
 
 # Menu modelamiento de cliente con función comprar/pagar
 crearCliente = int(input("-Desea crear su cliente?:\n 1) Sí\n 2) No\n Ingrese la opción: "))
