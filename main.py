@@ -25,7 +25,6 @@ while crearCliente == 1 or 2:
         correoCliente = input(" Ingrese su correo: ")
         usuario = nombreCliente 
         usuario = Cliente( dniCliente, nombreCliente, apellidoCliente, correoCliente)
-        usuario.guardarDatos( dniCliente, nombreCliente, apellidoCliente, correoCliente)
         print()
         clienteAccion = int(input("-¿Qué desea realizar?:\n 1) Comprar\n 2) Pagar\n Ingrese la opción: "))
         if clienteAccion == 1:
