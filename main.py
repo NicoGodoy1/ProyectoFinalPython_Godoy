@@ -4,14 +4,10 @@ from paquete1.modulo2 import *
 # pruebas
 print()
 Nico = Cliente("38329297","Nicolas","Godoy","nicolasgastongodoy@gmail.com")
-Pepito = Cliente("1111111","pepito","pepinetti","pepitopepinetto@gmail.com")
 Nico.guardarDatos("38329297","Nicolas","Godoy","nicolasgastongodoy@gmail.com")
-Pepito.guardarDatos("1111111","pepito","pepinetti","pepitopepinetto@gmail.com")
-Pepito.comprar("televisor", "5")
 Nico.comprar("televisor", "5")
 print()
 print(Nico)
-print(Pepito)
 print()
 
 
