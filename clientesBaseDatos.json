@@ -1,0 +1,34 @@
+{
+    "clientes": [
+        {
+            "DNI": "45345345",
+            "NOMBRE": "maria",
+            "APELLIDO": "ferreyra",
+            "CORREO": "maria@gmail.com"
+        },
+        {
+            "DNI": "38329297",
+            "NOMBRE": "nicolas",
+            "APELLIDO": "godoy",
+            "CORREO": "nico@gmail.com"
+        },
+        {
+            "DNI": "11111111",
+            "NOMBRE": "prueba",
+            "APELLIDO": "pruebaApellido",
+            "CORREO": "prueba@gmail.com"
+        },
+        {
+            "DNI": "111111111111111",
+            "NOMBRE": "pruebaNombre",
+            "APELLIDO": "pruebaApellido",
+            "CORREO": "prueba@gmail.com"
+        },
+        {
+            "DNI": "1111111111111111111111111",
+            "NOMBRE": "pruebaNombre",
+            "APELLIDO": "PruebaApellido",
+            "CORREO": "prueba@gmail,com"
+        }
+    ]
+}

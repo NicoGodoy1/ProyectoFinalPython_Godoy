@@ -1,5 +1,6 @@
-from paquete1.modulo1 import Cliente
-from paquete1.modulo2 import *
+from paquete1.modulo1 import *
+# from paquete1.modulo2 import *
+import json
 
 # pruebas
 print()
@@ -14,6 +15,7 @@ print()
 # Menu modelamiento de cliente con función comprar/pagar
 crearCliente = int(input("-Desea crear su cliente?:\n 1) Sí\n 2) No\n Ingrese la opción: "))
 precioTotal = 0
+listaClientes = []
 
 while crearCliente == 1 or 2:
     if crearCliente == 1:
@@ -25,6 +27,8 @@ while crearCliente == 1 or 2:
         correoCliente = input(" Ingrese su correo: ")
         usuario = nombreCliente 
         usuario = Cliente( dniCliente, nombreCliente, apellidoCliente, correoCliente)
+        listaClientes.append(usuario)
+        guardarCLIENTES(dniCliente, nombreCliente, apellidoCliente, correoCliente)
         print()
         clienteAccion = int(input("-¿Qué desea realizar?:\n 1) Comprar\n 2) Pagar\n Ingrese la opción: "))
         if clienteAccion == 1:
@@ -50,3 +54,5 @@ while crearCliente == 1 or 2:
     else:
         print("debe elegir una opción correcta")
         break
+
+print(listaClientes)

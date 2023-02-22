@@ -39,3 +39,24 @@ class Cliente(Persona):
             print()
             print(f"El pago fue procesado con éxito ✅.\nEl cliente utilizó la tarjeta n° {numTarjeta} con vencimiento el {vencimiento}\n y código de seguridad {codigoSeguridad}")
 
+    def getCliente(self):
+        return [{"DNI":{self.dni}, "NOMBRE":{self.nombre}, "APELLIDO":{self.apellido},"CORREO":{self.correo}}]
+
+
+def baseDatosCLIENTES(dniCliente, nombreCliente, apellidoCliente, correoCliente):
+  login = {}
+  login["clientes"] = []
+  login["clientes"].append({"DNI": dniCliente,"NOMBRE": nombreCliente,"APELLIDO": apellidoCliente,"CORREO": correoCliente})
+  with open(".\clientesBaseDatos.json", "w", encoding="utf-8") as file:
+    json.dump(login, file, indent=4)
+
+
+def guardarCLIENTES(dniCliente, nombreCliente, apellidoCliente, correoCliente):
+  try:
+    with open(".\clientesBaseDatos.json") as file:
+        lectura = json.load(file)
+        lectura["clientes"].append({"DNI": dniCliente,"NOMBRE": nombreCliente,"APELLIDO": apellidoCliente,"CORREO": correoCliente})
+        with open(".\clientesBaseDatos.json", "w", encoding = "utf-8") as file:
+            json.dump(lectura, file, indent=4)
+  except FileNotFoundError:
+     baseDatosCLIENTES(dniCliente, nombreCliente, apellidoCliente, correoCliente)
