@@ -1,0 +1,33 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    <p>Estamos buscando el celular: {{nombre}}</p>
+    <!-- <p>Estamos buscando el celular que cuesta: {{producto.precio}}</p> -->
+
+    {% if productos %}
+
+        <ul style="color: blueviolet;">
+
+            {% for producto in productos %}
+                <li>El nombre del celular es: {{producto.nombre}}</li>
+                <li>El precio del celular es: {{producto.precio}}</li>
+            {% endfor %}
+
+        </ul>
+
+    {% else %}
+        <p>No hay celulares con esa descripción.</p>
+
+    {% endif %}
+
+<br>
+
+<br>
+
+<br>
+
+
+{% endblock %} 

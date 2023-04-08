@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        {% load static %}
+        <!-- {% load static %} -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>App Celular Usado</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'AppCelularUsado/css/styles.css' %}" rel="stylesheet" />
+        <link href="{% static 'AppCelularUsado/css/estilos.css' %}" rel="stylesheet" />
+        <!-- bootstrap  -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
+    </head>
+    <body>
+        <nav class=" gradiente-morado navbar navbar-expand-lg  mt-3 sticky-top">
+            <div class="container-fluid ">
+              <a class="navbar-brand mt-2 text-black fst-italic fw-bolder fs-2 text-black"  href="{% url 'Inicio' %}">CeluYa!<i class="bi bi-phone-flip fs-1 mb-4 align-items-center"></i></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active text-black" aria-current="page" href="{% url 'Inicio' %}">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black" aria-current="page"  href="{% url 'Celular' %}">Celulares</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black" aria-current="page" href="{% url 'Comentarios' %}">Comentarios</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black" aria-current="page"  href="{% url 'Usuario' %}">Usuarios</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black" aria-current="page"  href="{% url 'AgregarProducto' %}">Cargar celu para vender</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black" aria-current="page"  href="{% url 'MostrarCelulares' %}">Ver Celulares</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black" aria-current="page"  href="{% url 'CrearUsuario' %}">Creá tu Usuario</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black" aria-current="page"  href="{% url 'BuscarCelular' %}">Buscá tu celular</a>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </nav>
+      <main>
+        <h2 class="gradiente-morado w-75 px-2 py-2 m-5 ms-0">¡Aprovechá las ofertas destacadas!<i class="bi bi-phone-flip fs-1 mb-4 mx-2 align-items-center"></i></h2>
+        <div class="container justify-content-center justify-content-evenly d-flex " id="listaArticulos"> 
+      </main>
+        {% block contenidoQueCambia %}
+
+        {% endblock %}
+       
+        <!-- pié de página  -->
+    <footer class="pie-pagina">
+        <div class="container">
+          <footer class="py-5">
+            <div class="row">
+              <div class="col-6 col-md-2 mb-3">
+                <h5>Comprá en Celuya.com</h5>
+                <ul class="nav flex-column">
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Servicio técnico</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Información legal</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Botón de arrepentimiento</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Protección de Usuarios Financieros</a></li>
+                </ul>
+              </div>
+        
+              <div class="col-6 col-md-2 mb-3">
+                <h5>CeluYa!<i class="bi bi-phone-flip fs-4 text-center me-1"></i>créditos</h5>
+                <ul class="nav flex-column">
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pagá Online</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Catálogo exclusivo</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Condiciones</a></li>
+                </ul>
+              </div>
+        
+              <div class="col-6 col-md-2 mb-3">
+                <h5>Ayuda</h5>
+                <ul class="nav flex-column">
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Centro de ayuda</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contactanos</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Sucursales</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Vendé en CeluYa</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Trabajá con nosotros</a></li>
+                </ul>
+              </div>
+        
+              <div class="col-md-5 offset-md-1 mb-3">
+                <form>
+                  <h5>Suscribete a nuestro boletín de noticias!</h5>
+                  <p>Recibe mensualmente noticias sobre lo último en tecnología!.</p>
+                  <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                    <label for="newsletter1" class="visually-hidden">Correo electrónico</label>
+                    <input id="newsletter1" type="text" class="form-control border-morado" placeholder="Correo electrónico">
+                    <button class="btn-morado" type="button">Suscribirme</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+        
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+              <p>&copy; 2022 CeluYa, Inc. Todos los derechos reservados.</p>
+              <ul class="list-unstyled d-flex">
+                <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-facebook btn-fb"></i></a></li>
+                <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-whatsapp btn-ws"></i></a></li>
+                <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-twitter btn-tw"></i></a></li>
+                <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-instagram btn-ins"></i></a></li>
+              </ul>
+            </div>
+          </footer>
+        </div>
+      </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
+
+
+
+<!-- --------------------------------------------------------------------------------------------------------------------------- -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="keywords" content="turismo, Chile, subsecretaría, zoits, zonas, turísticas, número, whatsapp, viajar, mar, lago, condiciones,estadísticas, requisitios, seguridad, geografía, diversidad " />
+    <meta name="description" content="Visitá la página ofical de la Subsecretaria de turismo de Chile donde vas a poder conocer lo últimos eventos, ver fotos y conocer la diversidad geográfica de Chile. " />
+    <title>CeluYa!</title>
+    <link rel="icon" type="image/svg" sizes="16x16" href="./recursos/phone-flip_favicon.svg">
+    <!-- bootstrap  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- archivo css -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<!-- </header>
+    <button id="boton">Click</button>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="./main.js"></script> -->
+    <!-- <script defer src="./modal.js"></script> -->
+    <!-- bootstrap -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> -->
+</body>
+</html>

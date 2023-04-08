@@ -1,0 +1,15 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    <body>
+        <p>Nombre del Producto: <i>{{producto.nombre}}</i> </p>
+        <p>Precio: <i>{{ producto.precio }}</i> </p>
+        <p class="m-2" > 
+            <a class="btn-morado" href="{% url 'List' %}">Regresar</a>
+        </p>
+
+    </body>
+{% endblock %}

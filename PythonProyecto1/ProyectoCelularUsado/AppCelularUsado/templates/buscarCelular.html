@@ -1,0 +1,16 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    <!-- <h2>Buscá tu próximo celular</h2> -->
+
+    <form action="buscar/" method="GET">
+
+        <input type="text" name="nombre" id="nombre">
+        <!-- <input type="number" name="precio" > -->
+        <input type="submit" value="Buscar">
+    </form>
+
+{% endblock %}
