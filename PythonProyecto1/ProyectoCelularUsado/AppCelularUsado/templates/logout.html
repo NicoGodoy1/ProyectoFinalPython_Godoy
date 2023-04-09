@@ -5,7 +5,109 @@
 {% block contenidoQueCambia %}
 
 <body>
-    <h2>Te has deslogueado con éxito!</h2>
+    <body>
+        <form action="" method="POST" class=" mt-5 container align-items-center justify-content-center w-50">
+            <div class="imgcontainer" >
+                <svg class="puerta" xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-door-closed-fill" viewBox="0 0 16 16">
+                    <path d="M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1h8zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                  </svg>
+            </div>
+    
+            <div class="m-5 ms-2">
+                <h4 class=" justify-content-center align-items-center " style="padding-left: 140px;">  ¡Has cerrado sesión con éxito! ✅</h4>
+            </div>
+            <h6>¡Inicia sesión nuevamente ingresando<a href="{% url 'Login' %}"> aquí</a>!</h6>
+        </form>
+    </body>
+    <br>
+
+
+    <br>
+
+
+
+
+    <br>
+
+
+
+
+    <br>
+
+    <br>
+    <br>
+    <br>
+
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        form {
+            border: 3px solid rgb(68, 0, 153);
+            
+        }
+    
+        
+        input[type=text], input[type=password] {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          box-sizing: border-box;
+        }
+        
+        .button {
+          background-image: linear-gradient(-90deg, rgb(211, 0, 152), rgb(68, 0, 153));
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+          width: 100%;
+        }
+        
+        .button:hover {
+          opacity: 0.8;
+        }
+        
+        .cancelbtn {
+          width: auto;
+          padding: 10px 18px;
+          background-color: #f44336;
+        }
+        
+        .imgcontainer {
+          text-align: center;
+          margin: 24px 0 12px 0;
+        }
+        
+        img.avatar {
+          width: 40%;
+          border-radius: 50%;
+        }
+        
+        .container {
+          padding: 10px;
+        }
+        
+        span.psw {
+          float: right;
+          padding-top: 16px;
+        }
+        .puerta {
+            color: rgb(68, 0, 153);
+        }
+        
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+          span.psw {
+             display: block;
+             float: none;
+          }
+          .cancelbtn {
+             width: 100%;
+          }
+        }
+        </style>
 </body>
 
 {% endblock %}

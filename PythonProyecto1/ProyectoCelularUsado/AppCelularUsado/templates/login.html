@@ -5,21 +5,29 @@
 {% block contenidoQueCambia %}
 
 <body>
-    <div class="justify-content-center align-items-center">
-        <h2 >Inicio de sesión</h2>
-    </div >
     <form action="" method="POST" class="container align-items-center justify-content-center w-50">
         <div class="imgcontainer" >
-            <i class="bi bi-person-circle avatar fs-5" alt="Avatar"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+              </svg>
         </div>
 
         {% csrf_token %}
 
         {{ form.as_p }}
-        <div class="m-5">
-            <button class="btn btn-primary" type="submit">Iniciar Sesión</button>
+        <div class="m-3">
+            <button class="btn btn-primary button" type="submit">Iniciar Sesión</button>
         </div>
     </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 </body>
 <style>
     body {font-family: Arial, Helvetica, sans-serif;}
@@ -27,7 +35,6 @@
         border: 3px solid rgb(68, 0, 153);
         
     }
-
     
     input[type=text], input[type=password] {
       width: 100%;
@@ -38,9 +45,8 @@
       box-sizing: border-box;
     }
     
-    button {
+    .button {
       background-image: linear-gradient(-90deg, rgb(211, 0, 152), rgb(68, 0, 153));
-       color: white;
       color: white;
       padding: 14px 20px;
       margin: 8px 0;
@@ -49,7 +55,7 @@
       width: 100%;
     }
     
-    button:hover {
+    .button:hover {
       opacity: 0.8;
     }
     
@@ -89,7 +95,6 @@
       }
     }
     </style>
-    </head>
     <!-- <body>
     
     <h2>Inicio de sesión</h2>
