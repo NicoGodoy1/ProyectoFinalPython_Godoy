@@ -1,5 +1,6 @@
 from django.urls import path
 from AppCelularUsado import views
+from django.contrib.auth.views import LogoutView
 
 # app_name = 'AppCelularUsado'
 
@@ -22,5 +23,11 @@ urlpatterns = [
     path('nuevo', views.ProductoCreacion.as_view(), name='New' ),
     path('editar/<int:pk>', views.ProductoUpdate.as_view(), name='Edit' ),
     path('borrar/<int:pk>', views.ProductoDelete.as_view(), name='Delete' ),
+    path('login', views.login_request, name='Login'),
+    path('register', views.register, name='Registro'),
+    path('logout', LogoutView.as_view(template_name='logout.html'), name='Logout'),
+    
+
+
     # path('resultadosPorBusqueda', views.resultadosPorBusqueda),
 ]

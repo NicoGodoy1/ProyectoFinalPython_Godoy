@@ -1,0 +1,19 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<body>
+    <form action="" method="POST" class="text-center align-items-center">
+        <div class="justify-content-evenly inline-block">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+        </div>
+
+        <button class="btn btn-primary" type="submit">Registrate</button>
+    </form>
+</body>
+
+{% endblock %}

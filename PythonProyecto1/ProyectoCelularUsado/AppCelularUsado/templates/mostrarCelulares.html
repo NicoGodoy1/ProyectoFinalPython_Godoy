@@ -3,27 +3,51 @@
 {% load static %}
 
 {% block contenidoQueCambia %}
-
-    <h2>lista de celulares en venta</h2>
+<h2 class="gradiente-morado w-75 px-2 py-2 m-5 ms-0">¡Aprovechá los mejores precios en celulares usados!<i class="bi bi-phone-flip fs-1 mb-4 mx-2 align-items-center"></i></h2>
 
 <div class="container text-center">
-    <h1>Celulares en Venta</h1>
+    <h1>Celulares Publicados</h1>
 </div>
 
 <br>
 
 <div class="container text-center">
-    <div class="row">
-        
-    </div>
-        {% for producto in productos %}
-        <li> {{producto}}</li>
-        <button>
-            <a href="{% url 'EliminarProducto' producto.nombre %}">Eliminar</a>
-            <a href="{% url 'EditarProducto' producto.nombre %}">Editar</a>
-        </button>
-        {% endfor %}
-        <a href="productos">Agregar producto</a>
+    <!-- <div class="row"> -->
+    <div>    
+    </div >
+    <div class="container text-center justify-content-center justify-content-evenly">
+        <div class="row">
+            {% for producto in productos %} 
+                <div class="col-lg-3 col-md-6 col-sm-4">
+                    <div class="card tarjetas__efecto w-100"  >
+                        <h1 class="text-primary fs-6">{{producto}}</h1>
+                        <img src="${this.url}" class="card-img-top img-fluid w-100" style="width: 100%;"; alt="...">
+                        <div class="card-body f-5 m-1 p-1">
+                        <h5 class="card-title text-center f-4 m-1 p-1" >{{producto.nombre}}</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                        <li class="list-group-item text-center fs-4 fw-bold">$ {{producto.precio}}</li>
+                        <!-- <li class="list-group-item text-success bg-success bg-opacity-25 text-center p-1 fw-bold">¡Llega mañana!</li> -->
+                        <button id=${this.id} class="btn-morado align-items-center mx-2 my-2" type="button" dataValor="${this.precio}">Contactar vendedor<i class="bi bi-cart3 ms-2"></i>
+                        </button>
+                        <h6 class="text-center  text-muted  ">producto N°: {{producto.id}} </h6>
+                        </ul>
+                        <div>
+                            <a  class="btn btn-primary  mx-2 my-2 fs-6 "  href="{% url 'EliminarProducto' producto.nombre %}">Eliminar</a>
+                            <a  class="btn btn-primary mx-2 my-2 fs-6 " href="{% url 'EditarProducto' producto.nombre %}">Editar</a>
+                        </div>
+                        <!-- <a type="button" class="btn btn-primary  mx-2 my-2 fs-6 "  href="{% url 'EliminarProducto' producto.nombre %}">Eliminar</a>
+                        <a type="button" class="btn btn-primary mx-2 my-2 fs-6 " href="{% url 'EditarProducto' producto.nombre %}">Editar</a> -->
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div> 
+        <div class="m-5">
+
+            <a type="button" class="btn btn-warning in-line" href="{% url 'AgregarProducto' %}">Vendé tu celular!</a>
+
+        </div>
     </div>
 {% endblock %}
 

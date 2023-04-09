@@ -1,3 +1,20 @@
+/* GLOBAL */s
+a {
+  text-decoration: none;
+  border: none;
+}
+button {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+  text-align: center;
+  margin: 20px 10px 10px;
+}
+li {
+  list-style-type: none;
+  display: inline;   
+}
 
 /* carrito */
 #cart-icon {
@@ -84,6 +101,9 @@
     border-radius: 0px 5px 5px 0px;
     border-color: rgb(68, 0, 153);
   }
+  .borde-morado {
+    border-color:  rgb(68, 0, 153);
+  }
   .gradiente-morado {
     background-image: linear-gradient(-90deg, rgb(211, 0, 152), rgb(68, 0, 153));
     color: white;
@@ -107,7 +127,7 @@
   .border-morado {
     border-width: 2px;
     border-style: inset;
-    border-color: rgb(68, 0, 153);;
+    border-color: rgb(68, 0, 153);
     border-radius: 8px 8px 8px 8px;
   }
   .border-morado-buscador {
