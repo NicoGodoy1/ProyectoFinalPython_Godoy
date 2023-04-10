@@ -194,6 +194,13 @@ def register(request):
 
     return render(request, 'registro.html', {'form': form})
 
+
+def carrito(request):
+    return render(request, 'carrito.html')
+
+def acercaDeMi(request):
+    return render(request, 'acercaDeMi.html')
+
 @login_required
 def inicio(request):
     return render(request, 'inicio.html')

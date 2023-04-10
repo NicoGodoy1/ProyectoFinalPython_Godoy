@@ -1,0 +1,23 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<body>
+    <section class="d-flex align-items-center justify-content-evenly text-primary my-3" id="carro">
+        <div class="card" style="width: 600px;">
+          <div class="card-header d-flex justify-content-center fw-bold bg-warning fs-5">
+            Carrito<i class=" ms-2 bi bi-cart3"></i>
+          </div>
+          <div id="carrito-contenedor" class="list-group list-group-flush">
+            CARRITO VACIO
+          </div>
+          <p class="precioProducto fs-6 justify-content-end">Total: <span id="precioTotal" class="fs-3">0</span> pesos</p>
+          <button id="vaciar-carrito" class="btn-morado-buscador">Vaciar carrito</button>
+        </div>
+      </section>
+</body>
+
+
+{% endblock %}

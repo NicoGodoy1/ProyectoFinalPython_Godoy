@@ -26,6 +26,11 @@ urlpatterns = [
     path('login', views.login_request, name='Login'),
     path('register', views.register, name='Registro'),
     path('logout', LogoutView.as_view(template_name='logout.html'), name='Logout'),
+
+    path('carrito', views.carrito, name='Carrito'),
+    path('acercaDeMi', views.acercaDeMi , name='AcercaDeMi'),
+
+
     
 
 
