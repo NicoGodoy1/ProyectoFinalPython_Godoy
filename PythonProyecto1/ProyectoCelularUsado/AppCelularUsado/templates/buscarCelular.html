@@ -4,13 +4,20 @@
 
 {% block contenidoQueCambia %}
 
-    <h2>Buscá tu próximo celular</h2>
+    <h2 class="ms-3">Buscá por marca tu próximo celular...</h2>
+    <li class="fw-bold ms-3">Marcas disponibles:</li>
+    <li>Samsung</li>
+    <li>Motorola</li>
+    <li>TCL</li>
+    <li>iPhone</li>
+    <li></li>
+    
 
     <form action="buscar/" method="GET" class="d-flex justify-content-center align-items-center" style="max-width: 1000px;">
 
-        <input type="text" name="nombre" id="nombre">
+        <input class="btn ms-5" type="text" name="nombre" id="nombre">
         <!-- <input type="number" name="precio" > -->
-        <input class="max-width: 50px" type="submit" value="Buscar">
+        <input class="" type="submit" value="Buscar">
     </form>
     <br>
     <br>
@@ -24,10 +31,10 @@
     <br>
     <style>
         body {font-family: Arial, Helvetica, sans-serif;}
-        form {
+        /* form {
             border: 3px solid rgb(68, 0, 153);
             margin: 50px;
-        }
+        } */
         h1 {
             color: rgb(68, 0, 153);
             font-weight: bolder;

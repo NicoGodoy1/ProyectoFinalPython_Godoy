@@ -168,7 +168,7 @@ def login_request(request):
             user = authenticate(username=usuario, password=contrasenia)
             if user is not None:
                 login(request, user)
-                return render(request, "inicio.html", {"mensaje": f"Bienvenido {usuario}"})
+                return render(request, "usuarios.html", {"mensaje": f"Bienvenido {usuario}"})
             else: 
                 return render(request, "inicio.html", {"mensajeNegativo": "Error, datos incorrectos."})
             

@@ -72,11 +72,14 @@
                     <a class="nav-link text-white mx-2" aria-current="page"  href="{% url 'AcercaDeMi' %}">Sobre mí</a>
                   </li>
                   <div id="cart-icon">
-                    <a href="{% url 'Carrito' %}"><button class="btn btn-outline-light ms-2 fw-bold" type="submit" style="margin-top: 5px;"><i class="bi bi-cart3 fs-5"></i></button></a>
+                    <a href="{% url 'Carrito' %}"><button class="btn btn-outline-light ms-2 fw-bold" type="submit" style="margin-top: 5px;"><i class="bi bi-cart3 fs-5 mb-5"></i></button></a>
                     <div id="cart-count">0</div>
                   </div>
                 </ul>
                   {% if request.user.is_authenticated %}
+                  <li class="nav-item m-3 btn btn-outline-light">
+                    <a class="nav-link"  aria-current="page"  href="{% url 'Usuario' %}">Perfil</a>
+                  </li>
                   <div>
                     <button class="btn btn-dark">
                       <a href="{% url 'Logout' %}">Cerrar sesión</a>
