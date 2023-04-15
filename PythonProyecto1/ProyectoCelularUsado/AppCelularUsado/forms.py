@@ -1,7 +1,8 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-
+from django.contrib.auth.models import User
+# from AppCelularUsado.models import Producto
 
 class CelularFormulario(forms.Form):
     nombre = forms.CharField()
@@ -11,6 +12,13 @@ class CelularFormulario(forms.Form):
 class ProductoFormulario(forms.Form):
     nombre = forms.CharField()
     precio = forms.IntegerField()
+    imagenCelular = forms.ImageField()
+
+# . 
+
+
+
+# .
 
 class UsuarioFormulario(forms.Form):
     nombre = forms.CharField()

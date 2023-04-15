@@ -45,7 +45,7 @@ def agregarProducto(request):
     
             informacion = miFormulario.cleaned_data
     
-            celular = Producto(nombre=informacion['nombre'], precio=informacion['precio'])
+            celular = Producto(nombre=informacion['nombre'], precio=informacion['precio'] )
     
             celular.save()
         
@@ -145,7 +145,7 @@ class ProductoCreacion(CreateView):
     model = Producto
     template_name = "productos_form.html"
     success_url = reverse_lazy("List")
-    fields = ['nombre', 'precio']
+    fields = ['nombre', 'precio', "imagenCelular"]
 
 class ProductoUpdate(UpdateView):
     model = Producto
@@ -168,7 +168,7 @@ def login_request(request):
             user = authenticate(username=usuario, password=contrasenia)
             if user is not None:
                 login(request, user)
-                return render(request, "usuarios.html", {"mensaje": f"Bienvenido {usuario}"})
+                return render(request, "inicio.html", {"mensaje": f"Bienvenido {usuario}"})
             else: 
                 return render(request, "inicio.html", {"mensajeNegativo": "Error, datos incorrectos."})
             
