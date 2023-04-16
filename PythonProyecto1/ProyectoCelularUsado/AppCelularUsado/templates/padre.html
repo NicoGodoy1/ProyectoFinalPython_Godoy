@@ -86,7 +86,7 @@
                     </button>
                   </div>
                   <div>
-                    <img src="{{url  | default_if_none:'./recursos/avatar_login.webp'}}" class="rounded-circle border border-4 m-1" style="width: 60px; height: 60px;">
+                    <img src="{{url  | default_if_none:'./recursos/avatar_login.webp'}}" class="rounded-circle border border-4 m-1 letraAlt" style="width: 60px; height: 60px;" alt="Sin avatar">
                   </div>
                   {% else %}
                   <li class="nav-item m-2">
@@ -207,4 +207,9 @@
     <!-- bootstrap -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> -->
 </body>
+<style>
+  .letraAlt {
+    font-size: 13px;
+  }
+</style>
 </html>

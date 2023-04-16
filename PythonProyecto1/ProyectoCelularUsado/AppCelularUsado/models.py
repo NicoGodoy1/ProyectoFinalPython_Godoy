@@ -20,6 +20,7 @@ class Producto(models.Model):
         return f"Nombre: {self.nombre} - Precio: {self.precio}"
     
 class Item(models.Model):
+    marca = models.CharField(max_length=40,  default="Sin marca")
     nombre = models.CharField(max_length=40)
     precio = models.IntegerField()
     imagenCelular = models.ImageField(null=True, blank=True, upload_to="img/")

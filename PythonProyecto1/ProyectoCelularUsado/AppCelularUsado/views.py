@@ -23,8 +23,30 @@ from django.http import HttpResponseForbidden
     
 #     return HttpResponse(documentodeTexto)
 
+@login_required
+def agregarAvatar(request):
+    avatares = Avatar.objects.filter(user=request.user.id)
+    if request.method == 'POST':
+        miFormulario = AvatarFormulario(request.POST, request.FILES )
+        if miFormulario.is_valid():
+            u = User.objects.get(username=request.user)
+            avatar = Avatar(user=u, imagen=miFormulario.cleaned_data['imagen'])
+            avatar.save()
+
+            return render(request, 'inicio.html')
+    else:
+        miFormulario = AvatarFormulario()
+    return render(request, 'agregarAvatar.html', {'miFormulario': miFormulario,'url': avatares[0].imagen.url})
+
+
+@login_required
 def inicio(request):
-    return render(request, 'inicio.html')
+    avatares = Avatar.objects.filter(user=request.user.id)
+    return render(request, 'inicio.html', {'url': avatares[0].imagen.url})
+
+
+# def inicio(request):
+#     return render(request, 'inicio.html')
 
 def celular(request):
     return render(request, 'celular.html')
@@ -38,6 +60,8 @@ def comentarios(request):
 @login_required
 def agregarProducto(request):
 
+    avatares = Avatar.objects.filter(user=request.user.id)
+    
     if request.method == 'POST':
 
         miFormulario = ProductoFormulario(request.POST)
@@ -56,7 +80,7 @@ def agregarProducto(request):
     else:
         miFormulario = ProductoFormulario()
 
-    return render(request, 'agregarProducto.html', {'miFormulario': miFormulario})
+    return render(request, 'agregarProducto.html', {'miFormulario': miFormulario,'url': avatares[0].imagen.url})
 
 def crearUsuario(request):
 
@@ -84,10 +108,12 @@ def usuarioCreadoExito(request):
     return render(request, 'usuarioCreadoExito.html')
 
 def buscarCelular(request):
-    return render(request, 'buscarCelular.html')
+    avatares = Avatar.objects.filter(user=request.user.id)
+    return render(request, 'buscarCelular.html', {'url': avatares[0].imagen.url})
 
 def buscar(request):
     # respuesta = f"Estoy buscando el celular por nombre: {request.GET['nombre'] }"
+    avatares = Avatar.objects.filter(user=request.user.id)
 
     if request.GET["nombre"]:
 
@@ -95,17 +121,18 @@ def buscar(request):
         nombre = request.GET['nombre']
         productos = Producto.objects.filter(nombre__icontains= nombre)
 
-        return render(request, 'resultadosPorBusqueda.html', { "productos": productos, "nombre": nombre})
+        return render(request, 'resultadosPorBusqueda.html', { "productos": productos, "nombre": nombre, 'url': avatares[0].imagen.url})
     else:
         respuesta = 'No enviaste bien los datos'
 
-    return HttpResponse(respuesta)
+    return HttpResponse(respuesta, {'url': avatares[0].imagen.url})
 
 def mostrarCelulares(request):
     productos = Producto.objects.all()
-    contexto = {"productos": productos}
+    avatares = Avatar.objects.filter(user=request.user.id)
+    contexto = {"productos": productos,'url': avatares[0].imagen.url }
 
-    return render(request, 'mostrarCelulares.html', contexto)
+    return render(request, 'mostrarCelulares.html', contexto )
 
 
 @login_required
@@ -134,8 +161,8 @@ def editarProducto(request, producto_nombre):
 @login_required
 def eliminarProducto(request, producto_nombre):
     producto = Producto.objects.get(nombre= producto_nombre)
-    producto.delete()
-
+    if producto.user == request.user:
+        producto.delete()
     productos = Producto.objects.all()
 
     contexto = {"productos": productos}
@@ -184,6 +211,7 @@ def login_request(request):
         else:
             return render(request, "inicio.html", {"mensajeNegativo": "Error, formulario erroneo."})
     form = AuthenticationForm()
+    # avatares = Avatar.objects.filter(user=request.user.id)
     return render(request, "login.html", {"form": form})
 
 def register(request):
@@ -208,12 +236,14 @@ def carrito(request):
     return render(request, 'carrito.html')
 
 def acercaDeMi(request):
-    return render(request, 'acercaDeMi.html')
+    avatares = Avatar.objects.filter(user=request.user.id)
+    return render(request, 'acercaDeMi.html', {'url': avatares[0].imagen.url})
 
 
 
 def editarPerfil(request):
     usuario = request.user
+    avatares = Avatar.objects.filter(user=request.user.id)
     if request.method == 'POST':
         miFormulario = UserEditForm(request.POST)
         print(miFormulario)
@@ -233,27 +263,27 @@ def editarPerfil(request):
     else:
         miFormulario = UserEditForm(initial={'email': usuario.email})
     
-    return render (request, 'editarPerfil.html', {'miFormulario': miFormulario, 'usuario': usuario})
+    return render (request, 'editarPerfil.html', {'miFormulario': miFormulario, 'usuario': usuario, 'url': avatares[0].imagen.url})
 
-@login_required
-def agregarAvatar(request):
-    if request.method == 'POST':
-        miFormulario = AvatarFormulario(request.POST, request.FILES )
-        if miFormulario.is_valid():
-            u = User.objects.get(username=request.user)
-            avatar = Avatar(user=u, imagen=miFormulario.cleaned_data['imagen'])
-            avatar.save()
+# @login_required
+# def agregarAvatar(request):
+#     if request.method == 'POST':
+#         miFormulario = AvatarFormulario(request.POST, request.FILES )
+#         if miFormulario.is_valid():
+#             u = User.objects.get(username=request.user)
+#             avatar = Avatar(user=u, imagen=miFormulario.cleaned_data['imagen'])
+#             avatar.save()
 
-            return render(request, 'inicio.html')
-    else:
-        miFormulario = AvatarFormulario()
-    return render(request, 'agregarAvatar.html', {'miFormulario': miFormulario})
+#             return render(request, 'inicio.html')
+#     else:
+#         miFormulario = AvatarFormulario()
+#     return render(request, 'agregarAvatar.html', {'miFormulario': miFormulario})
 
 
-@login_required
-def inicio(request):
-    avatares = Avatar.objects.filter(user=request.user.id)
-    return render(request, 'inicio.html', {'url': avatares[0].imagen.url})
+# @login_required
+# def inicio(request):
+#     avatares = Avatar.objects.filter(user=request.user.id)
+#     return render(request, 'inicio.html', {'url': avatares[0].imagen.url})
 
 # def resultadosPorBusqueda(request):
 #     return render(request, 'resultadosPorBusqueda.html')
