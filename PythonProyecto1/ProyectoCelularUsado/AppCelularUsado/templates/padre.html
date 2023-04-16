@@ -23,7 +23,7 @@
     </head>
     <body>
       {% if mensaje %}
-          <p class="alert alert-success h-25"  role="alert">{{mensaje}} ✅</p> 
+          <p class="alert alert-success h-25 m-1 f-5"  role="alert">{{mensaje}} ✅</p> 
           <!-- <form action="buscar" method="GET">
             <p>Buscá tu próximo celular usado!</p>
             <input type="text" name="nombre" id="camada">
@@ -31,7 +31,7 @@
           </form> -->
       {% endif %}
       {% if mensajeNegativo %}
-        <p class="alert alert-danger h-25"  role="alert">{{mensajeNegativo}} ❌</p>
+        <p class="alert alert-danger h-25 m-1 f-5"  role="alert">{{mensajeNegativo}} ❌</p>
         <!-- <form action="buscar" method="GET">
           <p>Buscá tu próximo celular usado!</p>
           <input type="text" name="nombre" id="camada">
@@ -78,21 +78,27 @@
                 </ul>
                   {% if request.user.is_authenticated %}
                   <li class="nav-item m-3 btn btn-outline-light">
-                    <a class="nav-link"  aria-current="page"  href="{% url 'Usuario' %}">Perfil</a>
+                    <a class="nav-link"  aria-current="page"  href="{% url 'EditarPerfil' %}">Perfil</a>
                   </li>
                   <div>
                     <button class="btn btn-dark">
                       <a href="{% url 'Logout' %}">Cerrar sesión</a>
                     </button>
                   </div>
+                  <div>
+                    <img src="{{url  | default_if_none:'./recursos/avatar_login.webp'}}" class="rounded-circle border border-4 m-1" style="width: 60px; height: 60px;">
+                  </div>
                   {% else %}
                   <li class="nav-item m-2">
-                    <a class="nav-link text-white" aria-current="page"  href="{% url 'CrearUsuario' %}">¿Aún no te registrate?</a>
+                    <a class="nav-link text-white" aria-current="page"  href="{% url 'Registro' %}">¿Aún no te registrate?</a>
                   </li>
                   <div class="m-1">
                     <button class="btn btn-primary">
                       <a href="{% url 'Login' %}">Iniciar sesión</a>
                     </button>
+                  </div>
+                  <div>
+                    <img src="./recursos/avatar_login.webp" class="rounded-circle border border-4 m-1" width="70px" height="70px">
                   </div>         
                   {% endif %}
               </div>

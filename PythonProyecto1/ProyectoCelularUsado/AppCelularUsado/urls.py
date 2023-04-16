@@ -2,6 +2,7 @@ from django.urls import path
 from AppCelularUsado import views
 from django.contrib.auth.views import LogoutView
 
+
 # app_name = 'AppCelularUsado'
 
 urlpatterns = [
@@ -15,7 +16,7 @@ urlpatterns = [
     path('buscarCelular', views.buscarCelular, name='BuscarCelular'),
     path('buscar/', views.buscar),
     path('mostrarCelulares', views.mostrarCelulares, name='MostrarCelulares'),
-    path('eliminarProducto/<producto_nombre>', views.eliminarProducto, name='EliminarProducto'),
+    path('eliminarProducto/<o_nombre>', views.eliminarProducto, name='EliminarProducto'),
     path('editarProducto/<producto_nombre>', views.editarProducto, name='EditarProducto'),
 
     path('producto/list', views.ProductoList.as_view(), name='List'),
@@ -29,6 +30,10 @@ urlpatterns = [
 
     path('carrito', views.carrito, name='Carrito'),
     path('acercaDeMi', views.acercaDeMi , name='AcercaDeMi'),
+    path('editarPerfil', views.editarPerfil , name='EditarPerfil'),
+    path('agregarAvatar', views.agregarAvatar , name='AgregarAvatar'),
+
+    
 
 
     

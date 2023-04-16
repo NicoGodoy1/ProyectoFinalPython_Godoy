@@ -106,7 +106,19 @@ li {
   }
   .gradiente-morado {
     background-image: linear-gradient(-90deg, rgb(211, 0, 152), rgb(68, 0, 153));
+    /* background-image: linear-gradient(248.86deg, #B6509E 10.51%, #2EBAC6 93.41%); */
     color: white;
+  }
+  .gradiente-aave{
+    background-image: linear-gradient(248.86deg, #B6509E 10.51%, #2EBAC6 93.41%);
+    box-shadow: none;
+    border-radius: 4px;
+    font-family: Inter,Arial;
+    font-weight: 500;
+    line-height: 1.5rem;
+    font-size: 0.875rem;
+    padding: 6px 12px;
+    color: #fff;
   }
   .gradiente-rojo {
     background-image: linear-gradient(-90deg, rgb(246, 79, 79), rgb(234, 9, 9));

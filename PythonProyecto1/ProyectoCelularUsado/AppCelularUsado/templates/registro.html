@@ -5,81 +5,100 @@
 {% block contenidoQueCambia %}
 
 <body>
-    <form action="" method="POST" class="text-center align-items-center">
-        <div class="justify-content-evenly inline-block">
-            {% csrf_token %}
+    <form action="" method="POST" class="formulario">
+      <h1 class="d-flex fs-4 justify-content-center align-items-center mt-3">¡Creá tu usuario!<i class="bi bi-person-add ms-1"></i></h1>
+      <hr>
+      <table class=" d-flex justify-content-center align-items-center m-4 p-5">
+          {% csrf_token %}
 
-            {{ form.as_p }}
-        </div>
+          {{ form.as_p }}
+      </table>
 
-        <button class="btn btn-primary" type="submit">Registrate</button>
+      <div class="mx-5 my-3 ">
+        <input class="btn border border-primary" type="submit" value="Registrarme">
+      </div>
     </form>
 </body>
 <style>
-    body {font-family: Arial, Helvetica, sans-serif;}
-    form {
-        border: 3px solid rgb(68, 0, 153);
-        
-    }
-
-    
-    input[type=text], input[type=password] {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-    }
-    
-    button {
-      background-image: linear-gradient(-90deg, rgb(211, 0, 152), rgb(68, 0, 153));
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-    }
-    
-    button:hover {
-      opacity: 0.8;
-    }
-    
-    .cancelbtn {
-      width: auto;
-      padding: 10px 18px;
-      background-color: #f44336;
-    }
-    
-    .imgcontainer {
-      text-align: center;
-      margin: 24px 0 12px 0;
-    }
-    
-    img.avatar {
-      width: 40%;
-      border-radius: 50%;
-    }
-    
-    .container {
-      padding: 10px;
-    }
-    
+  body {font-family: Arial, Helvetica, sans-serif;}
+  form {
+      border: 3px solid rgb(68, 0, 153);
+      
+  }
+  h1 {
+      color: rgb(68, 0, 153);
+      font-weight: bolder;
+      margin-bottom: 40px;
+  }
+  
+  input[type=text], input[type=password], input[type= number], input[type= email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+  
+  input[type= submit] {
+    background-image: linear-gradient(-90deg, rgb(211, 0, 152), rgb(68, 0, 153));
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  input[type= submit] {
+    opacity: 0.8;
+  }
+  
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+  }
+  
+  img.avatar {
+    width: 40%;
+    border-radius: 50%;
+  }
+  
+  .container {
+    padding: 10px;
+  }
+  
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  label {
+      justify-content: center;
+      align-items: center;
+      margin-right: 20px;
+      color: rgb(68, 0, 153);
+  }
+  
+  .formulario {
+      margin: 10px 250px 250px 250px;
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
     span.psw {
-      float: right;
-      padding-top: 16px;
+       display: block;
+       float: none;
     }
-    
-    /* Change styles for span and cancel button on extra small screens */
-    @media screen and (max-width: 300px) {
-      span.psw {
-         display: block;
-         float: none;
-      }
-      .cancelbtn {
-         width: 100%;
-      }
+    .cancelbtn {
+       width: 100%;
     }
-    </style>
+  }
+  </style>
 {% endblock %}

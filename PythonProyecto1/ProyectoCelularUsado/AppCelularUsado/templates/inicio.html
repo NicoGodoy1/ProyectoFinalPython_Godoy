@@ -3,15 +3,12 @@
 {% load static %}
 
 {% block contenidoQueCambia %}
+    <table class="justify-content-center align-items-center">
+      <p class="d-flex  justify-content-center align-items-center w-100 fs-6">¡Qué bueno volver a verte {{user.username}}!<img src="{{url}}" class="justify-content-center align-items-center rounded-circle border border-4 m-3 inline " style="width: 70px; height: 70px;"></p>
+    </table>
+    <h2 class="d-flex justify-content-center align-items-center m-5 fs-1">¡Bienvenido a CeluYa donde podés comprar celulares usados!</h2>
 
-    <br>
-
-    <br>
-
-    <br>
-
-    <h2 class="d-flex justify-content-center align-items-center m-5">Bienvenido a CeluYa donde podés comprar celulares usados!</h2>
-    <form  class="d-flex align-items-center justify-content-center m-5">
+    <form  class="d-flex align-items-center justify-content-center m-3">
 
         <h5 class="m-2">¿Querés vender tu celular usado?</h5>
         <a class="btn btn-primary" href="{% url 'AgregarProducto' %}">Agregalo acá</a>
@@ -27,7 +24,6 @@
 
     <br>
 
-    <br>
     <br>
 
     <br>
