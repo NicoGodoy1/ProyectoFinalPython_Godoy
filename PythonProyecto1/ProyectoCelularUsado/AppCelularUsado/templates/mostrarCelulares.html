@@ -21,8 +21,11 @@
                 <div class="col-lg-3 col-md-6 col-sm-4">
                     <div class="card tarjetas__efecto w-100"  >
                         <h1 class="text-primary fs-6">{{producto}}</h1>
-                        <img src="{{producto.imagenCelular}}">
-                        <!-- <img src= "{{ producto.ImagenCelular }}" class="card-img-top img-fluid w-100" style="width: 100%;"; alt="..."> -->
+                        {% if producto.imagen %}
+                            <img src="{{producto.imagen.url}}" class="card-img-top img-fluid w-100" style="width: 100%;" alt="no tiene foto">
+                        {% else %}
+                            <p>No image available</p>
+                        {% endif %}
                         <div class="card-body f-5 m-1 p-1">
                         <h5 class="card-title text-center f-4 m-1 p-1" >{{producto.nombre}}</h5>
                         </div>
@@ -31,7 +34,7 @@
                         <!-- <li class="list-group-item text-success bg-success bg-opacity-25 text-center p-1 fw-bold">¡Llega mañana!</li> -->
                         <button  id={{producto.id}} class="btn-morado align-items-center mx-2 my-2" type="button" dataValor="${this.precio}">Contactar vendedor<i class="bi bi-cart3 ms-2"></i>
                         </button>
-                        <h6 class="text-center  text-muted  ">producto N°: {{producto.id}} </h6>
+                        <h6 class="text-center  text-muted " >producto N°: {{producto.id}} </h6>
                         </ul>
                         <div>
                             <a  class="btn btn-primary  mx-2 my-2 fs-6 "  href="{% url 'EliminarProducto' producto.nombre %}">Eliminar</a>

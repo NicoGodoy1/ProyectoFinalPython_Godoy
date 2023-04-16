@@ -14,7 +14,7 @@ class Celular(models.Model):
 class Producto(models.Model):
     nombre = models.CharField(max_length=40)
     precio = models.IntegerField()
-    imagenCelular = models.ImageField(null=True, blank=True, upload_to="img/")
+    imagen = models.ImageField(null=True, blank=True, upload_to="img/")
     
     def __str__(self):
         return f"Nombre: {self.nombre} - Precio: {self.precio}"

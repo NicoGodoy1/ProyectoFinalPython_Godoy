@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-# from AppCelularUsado.models import Producto
+from AppCelularUsado.models import Producto
 
 class CelularFormulario(forms.Form):
     nombre = forms.CharField()
@@ -12,7 +12,22 @@ class CelularFormulario(forms.Form):
 class ProductoFormulario(forms.Form):
     nombre = forms.CharField()
     precio = forms.IntegerField()
-    imagenCelular = forms.ImageField()
+    imagen = forms.ImageField(required=True)
+
+    class Meta:
+        model = Producto 
+        fields = ['nombre', 'precio', 'imagen']
+        help_texts = {k: "" for k in fields}
+
+# class AvatarFormulario(forms.Form):
+#     username=forms.ModelChoiceField(queryset=User.objects.all())
+#     imagen =  forms.ImageField(required=True)
+
+#     class Meta:
+#         model = User
+#         fields = ['imagen']
+#         help_texts = {k: "" for k in fields}
+
 
 # . 
 

@@ -11,7 +11,7 @@ from django.contrib.auth import login, logout, authenticate
 from AppCelularUsado.forms import UserRegisterForm, UserEditForm 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.hashers import make_password
-from django.http import HttpResponseForbidden
+
 
 # Create your views here.
 # def celular(self):
@@ -23,20 +23,20 @@ from django.http import HttpResponseForbidden
     
 #     return HttpResponse(documentodeTexto)
 
-@login_required
-def agregarAvatar(request):
-    avatares = Avatar.objects.filter(user=request.user.id)
-    if request.method == 'POST':
-        miFormulario = AvatarFormulario(request.POST, request.FILES )
-        if miFormulario.is_valid():
-            u = User.objects.get(username=request.user)
-            avatar = Avatar(user=u, imagen=miFormulario.cleaned_data['imagen'])
-            avatar.save()
+# @login_required
+# def agregarAvatar(request):
+#     avatares = Avatar.objects.filter(user=request.user.id)
+#     if request.method == 'POST':
+#         miFormulario = AvatarFormulario(request.POST, request.FILES )
+#         if miFormulario.is_valid():
+#             u = User.objects.get(username=request.user)
+#             avatar = Avatar(user=u, imagen=miFormulario.cleaned_data['imagen'])
+#             avatar.save()
 
-            return render(request, 'inicio.html')
-    else:
-        miFormulario = AvatarFormulario()
-    return render(request, 'agregarAvatar.html', {'miFormulario': miFormulario,'url': avatares[0].imagen.url})
+#             return render(request, 'inicio.html')
+#     else:
+#         miFormulario = AvatarFormulario()
+#     return render(request, 'agregarAvatar.html', {'miFormulario': miFormulario,'url': avatares[0].imagen.url})
 
 
 @login_required
@@ -61,19 +61,14 @@ def comentarios(request):
 def agregarProducto(request):
 
     avatares = Avatar.objects.filter(user=request.user.id)
+    # fotos = Producto.objects.filter(Producto.imagen)
     
     if request.method == 'POST':
-
-        miFormulario = ProductoFormulario(request.POST)
-    
+        miFormulario = ProductoFormulario(request.POST, request.FILES)
         print(miFormulario)
-
         if miFormulario.is_valid:
-    
             informacion = miFormulario.cleaned_data
-    
-            celular = Producto(nombre=informacion['nombre'], precio=informacion['precio'] )
-    
+            celular = Producto(nombre=informacion['nombre'], precio=informacion['precio'], imagen=miFormulario.cleaned_data['imagen'] )
             celular.save()
         
             return render(request, 'inicio.html')
@@ -81,6 +76,21 @@ def agregarProducto(request):
         miFormulario = ProductoFormulario()
 
     return render(request, 'agregarProducto.html', {'miFormulario': miFormulario,'url': avatares[0].imagen.url})
+
+@login_required
+def agregarAvatar(request):
+    avatares = Avatar.objects.filter(user=request.user.id)
+    if request.method == 'POST':
+        miFormulario = AvatarFormulario(request.POST, request.FILES )
+        if miFormulario.is_valid():
+            u = User.objects.get(username=request.user)
+            avatar = Avatar(user=u, imagen=miFormulario.cleaned_data['imagen'])
+            avatar.save()
+
+            return render(request, 'inicio.html')
+    else:
+        miFormulario = AvatarFormulario()
+    return render(request, 'agregarAvatar.html', {'miFormulario': miFormulario,'url': avatares[0].imagen.url})
 
 def crearUsuario(request):
 
@@ -138,8 +148,8 @@ def mostrarCelulares(request):
 @login_required
 def editarProducto(request, producto_nombre):
     producto = Producto.objects.get(nombre=producto_nombre)
-    if producto.user != request.user:
-        return HttpResponseForbidden()
+    # if producto.user != request.user:
+    #     return HttpResponseForbidden()
     if request.method == 'POST':
         miFormulario = ProductoFormulario(request.POST)
         print(miFormulario)
@@ -161,8 +171,8 @@ def editarProducto(request, producto_nombre):
 @login_required
 def eliminarProducto(request, producto_nombre):
     producto = Producto.objects.get(nombre= producto_nombre)
-    if producto.user == request.user:
-        producto.delete()
+    producto.delete()
+
     productos = Producto.objects.all()
 
     contexto = {"productos": productos}
