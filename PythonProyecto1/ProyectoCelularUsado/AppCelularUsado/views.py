@@ -177,32 +177,6 @@ def eliminarProducto(request, producto_nombre):
 
     contexto = {"productos": productos}
     return render(request, "mostrarCelulares.html", contexto)
-   
-
-class ProductoList(ListView):
-    model = Producto
-    template_name = "producto_list.html"
-
-class ProductoDetalle(DetailView):
-    model = Producto
-    template_name = "producto_detalle.html"
-
-class ProductoCreacion(CreateView):
-    model = Producto
-    template_name = "productos_form.html"
-    success_url = reverse_lazy("List")
-    fields = ['nombre', 'precio', "imagenCelular"]
-
-class ProductoUpdate(UpdateView):
-    model = Producto
-    success_url = "producto/list"
-    template_name = "productos_form.html"
-    fields = ['nombre', 'precio']
-
-class ProductoDelete(DeleteView):
-    model = Producto
-    template_name = "producto_confirm_delete.html"
-    success_url = "producto/list"
 
 def login_request(request):
     if request.method == 'POST':
@@ -274,6 +248,32 @@ def editarPerfil(request):
         miFormulario = UserEditForm(initial={'email': usuario.email})
     
     return render (request, 'editarPerfil.html', {'miFormulario': miFormulario, 'usuario': usuario, 'url': avatares[0].imagen.url})
+
+class ProductoList(ListView):
+    model = Producto
+    template_name = "producto_list.html"
+
+class ProductoDetalle(DetailView):
+    model = Producto
+    template_name = "producto_detalle.html"
+
+class ProductoCreacion(CreateView):
+    model = Producto
+    template_name = "productos_form.html"
+    success_url = reverse_lazy("List")
+    fields = ['nombre', 'precio', "imagen"]
+
+class ProductoUpdate(UpdateView):
+    model = Producto
+    success_url = "producto/list"
+    template_name = "productos_form.html"
+    fields = ['nombre', 'precio']
+
+class ProductoDelete(DeleteView):
+    model = Producto
+    template_name = "producto_confirm_delete.html"
+    success_url = "producto/list"
+
 
 # @login_required
 # def agregarAvatar(request):

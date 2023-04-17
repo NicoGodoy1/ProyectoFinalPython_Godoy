@@ -16,7 +16,7 @@ urlpatterns = [
     path('buscarCelular', views.buscarCelular, name='BuscarCelular'),
     path('buscar/', views.buscar),
     path('mostrarCelulares', views.mostrarCelulares, name='MostrarCelulares'),
-    path('eliminarProducto/<o_nombre>', views.eliminarProducto, name='EliminarProducto'),
+    path('eliminarProducto/<producto_nombre>', views.eliminarProducto, name='EliminarProducto'),
     path('editarProducto/<producto_nombre>', views.editarProducto, name='EditarProducto'),
 
     path('producto/list', views.ProductoList.as_view(), name='List'),
