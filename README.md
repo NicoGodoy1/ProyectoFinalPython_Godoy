@@ -18,5 +18,5 @@
 - *Bootstrap 5.2*
 
 ## Admin
-- Usurario: "  _nico_  "
+- Usurario:  _ nico _ (con guion bajo al principio y al final)
 - Contraseña: *ngg2013py*
