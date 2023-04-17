@@ -19,16 +19,6 @@ class ProductoFormulario(forms.Form):
         fields = ['nombre', 'precio', 'imagen']
         help_texts = {k: "" for k in fields}
 
-# class AvatarFormulario(forms.Form):
-#     username=forms.ModelChoiceField(queryset=User.objects.all())
-#     imagen =  forms.ImageField(required=True)
-
-#     class Meta:
-#         model = User
-#         fields = ['imagen']
-#         help_texts = {k: "" for k in fields}
-
-
 # . 
 
 

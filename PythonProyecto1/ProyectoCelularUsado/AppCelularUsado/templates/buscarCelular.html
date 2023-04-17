@@ -16,9 +16,12 @@
     <form action="buscar/" method="GET" class="d-flex justify-content-center align-items-center" style="max-width: 1000px;">
 
         <input class="btn ms-5" type="text" name="nombre" id="nombre">
-        <!-- <input type="number" name="precio" > -->
+        
         <input class="" type="submit" value="Buscar">
     </form>
+    <p class="m-2" > 
+      <a class="btn btn-warning mx-4" href="{% url 'List' %}">Ir a lista de celulares</a>
+    </p>
     <br>
     <br>
     <br>
@@ -31,10 +34,7 @@
     <br>
     <style>
         body {font-family: Arial, Helvetica, sans-serif;}
-        /* form {
-            border: 3px solid rgb(68, 0, 153);
-            margin: 50px;
-        } */
+    
         h1 {
             color: rgb(68, 0, 153);
             font-weight: bolder;
@@ -98,6 +98,11 @@
         
         .formulario {
             margin: 10px 250px 250px 250px;
+        }
+        li {
+          margin: 10px;
+          display: inline-block;
+          font-size: 20px;
         }
         
         /* Change styles for span and cancel button on extra small screens */

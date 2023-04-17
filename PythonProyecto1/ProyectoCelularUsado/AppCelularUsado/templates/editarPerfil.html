@@ -4,14 +4,8 @@
 
 {% block contenidoQueCambia %}
 
-    <!-- <h2>Acá podrás cargar los datos de tu celular usado para vender!</h2> -->
 
     <body>
-        <!-- {% if miFormulario.errors %}
-    
-        <p style="color:red">Están mal los datos, revisar.</p>
-    
-        {% endif %} -->
         <li class="d-flex align-items-center justify-content-center ">
             Si solo deseás cambiar tu avatar <a class="btn btn-primary m-1" aria-current="page"  href="{% url 'AgregarAvatar' %}"> ingresa acá</a>
         </li>
@@ -21,7 +15,6 @@
             <div class="card border-primary m-3"  style="width: 500px;">
 
                 <h2 class="card-header text-black fw-bold m-3 fs-4">Actualizá los datos de tu perfil</h2>
-                <!-- <h3 class="d-flex align-items-center justify-content-center">Perfil de {{usuario}}</h3><img src="{{url}}" class="justify-content-center align-items-center rounded-circle border border-4 m-3 inline " style="width: 70px; height: 70px;"> -->
                 <table class="justify-content-center align-items-center">
                     <p class="d-flex  justify-content-center align-items-center w-100 fs-6">¡Perfil de {{user.username}}!<img src="{{url}}" class="justify-content-center align-items-center rounded-circle border border-4 m-3 inline " style="width: 70px; height: 70px;"></p>
                 </table>

@@ -16,3 +16,7 @@
 - *HTML 5*
 - *CSS 3*
 - *Bootstrap 5.2*
+
+## Admin
+- Usurario: *_nico_*
+- Contraseña: *ngg2013py*
